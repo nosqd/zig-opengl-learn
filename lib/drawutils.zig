@@ -25,6 +25,19 @@ pub const drawutils_t = struct {
             @as(f32, @floatCast(y + h))
         ); //output vertex 
     }
+
+    pub fn swap_to_pixel_coords(self: drawutils_t, win: ?*glfw.GLFWwindow) void {
+        _ = self;
+        var win_width: c_int = 0;
+        var win_height: c_int = 0;
+        glfw.glfwGetWindowSize(win, &win_width, &win_height);
+        glfw.glViewport(0,0, @intCast(win_width), @intCast(win_height));
+        glfw.glMatrixMode(glfw.GL_PROJECTION); 
+        glfw.glLoadIdentity(); 
+        glfw.glOrtho(0, @floatFromInt(win_width), 0, @floatFromInt(win_height), -1, 1); 
+        glfw.glMatrixMode(glfw.GL_MODELVIEW); 
+        glfw.glLoadIdentity();
+    }
 };
 
 pub const drawutils = drawutils_t {};

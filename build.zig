@@ -13,7 +13,7 @@ fn mkTarget(name: []const u8, file: std.Build.LazyPath, b: *std.Build, target: s
     const run_exe = b.addRunArtifact(exe);
     const run_step = b.step(try std.fmt.allocPrint(b.allocator, "run-{s}", .{name}), try std.fmt.allocPrint(b.allocator, "run {s}", .{name}));
     run_step.dependOn(&run_exe.step);   
-
+    b.installArtifact(exe);
     return exe;
 }
 
@@ -34,6 +34,7 @@ pub fn build(b: *std.Build) !void {
     lib.linkSystemLibrary("gdi32", .{});
     lib.linkSystemLibrary("glfw3", .{});
 
-    const bouncingRect = try mkTarget("bouncyrect", .{.path = "apps/bouncing-rect.zig"}, b, target, optimize, lib);
-    b.installArtifact(bouncingRect);
+    _ = try mkTarget("bouncyrect", .{.path = "apps/bouncyrect.zig"}, b, target, optimize, lib);
+    // disabled rn
+    // _ = try mkTarget("bouncyrect-old", .{.path = "apps/bouncyrect-old.zig"}, b, target, optimize, lib);
 }

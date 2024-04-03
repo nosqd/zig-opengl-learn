@@ -1,4 +1,10 @@
 pub const glfw = @import("glfw.zig").glfw;
-pub const IApp = @import("iapp.zig").IApp;
+pub const AppState = @import("iapp.zig").AppState;
+pub const PreInitFn = @import("iapp.zig").PreInitFn;
+pub const PostInitFn = @import("iapp.zig").PostInitFn;
+pub const UpdateFn = @import("iapp.zig").UpdateFn;
+pub const DrawFn = @import("iapp.zig").DrawFn;
+pub const AppInitParams = @import("iapp.zig").AppInitParams;
+pub const run_app = @import("iapp.zig").run_app;
 pub const drawutils = @import("drawutils.zig").drawutils;
 pub const drawutils_t = @import("drawutils.zig").drawutils_t;
