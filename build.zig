@@ -35,6 +35,6 @@ pub fn build(b: *std.Build) !void {
     lib.linkSystemLibrary("glfw3", .{});
 
     _ = try mkTarget("bouncyrect", .{.path = "apps/bouncyrect.zig"}, b, target, optimize, lib);
-    // disabled rn
-    // _ = try mkTarget("bouncyrect-old", .{.path = "apps/bouncyrect-old.zig"}, b, target, optimize, lib);
+    _ = try mkTarget("bouncyrect-no-iapp", .{.path = "apps/bouncyrect-no-iapp.zig"}, b, target, optimize, lib);
+    _ = try mkTarget("example", .{.path = "apps/example.zig"}, b, target, optimize, lib);
 }

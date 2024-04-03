@@ -1,18 +1,3 @@
-# ziggl-notes
-
-There are some notes that I made when learning Zig + OpenGL + GLFW
-
-## apps included
-
-- [bouncyrect.zig](./apps/bouncyrect.zig) - just bouncing rect using my [iapp system](#iapp-system)
-- [bouncyrect-no-iapp.zig](./apps/bouncyrect-no-iapp.zig) - just bouncing rect without [iapp system](#iapp-system)
-- [example.zig](./apps/bouncyrect-old.zig) - example app [iapp system](#iapp-system)
-
-## iapp system
-some thing that allows easily init_app
-
-example of iapp app
-```zig
 const std = @import("std");
 const glfw = @import("nlib").glfw;
 const drawutils = @import("nlib").drawutils;
@@ -42,4 +27,3 @@ fn draw(state: AppState) void {
 pub fn main() !void {
     try run_app(pre_init, post_init, update, draw);
 }
-```
