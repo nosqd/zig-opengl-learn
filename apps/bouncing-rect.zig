@@ -1,6 +1,6 @@
 const std = @import("std");
-const glfw = @import("glfw.zig").glfw;
-const drawutils = @import("drawutils.zig").drawutils;
+const glfw = @import("nlib").glfw;
+const drawutils = @import("nlib").drawutils;
 
 const SquarePosition = struct {
     x: f64,
