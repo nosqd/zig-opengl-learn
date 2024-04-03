@@ -27,15 +27,18 @@ fn pre_init() AppInitParams {
     square.y = @floatFromInt(rand.intRangeAtMostBiased(i64, 1, 800-SQUARE_SIZE));
     square.velx = @floatFromInt(rand.intRangeAtMostBiased(i64, 100, 200));
     square.vely = @floatFromInt(rand.intRangeAtMostBiased(i64, 100, 200));
+
     return .{
         .title = "bouncy rect",
         .width = 800,
         .height = 800
     };
 }
+
 fn post_init(state: AppState) void {
     _ = state;
 }
+
 fn update(state: AppState) void {
     square.x += square.velx * state.delta;
     square.y += square.vely * state.delta;
@@ -46,6 +49,7 @@ fn update(state: AppState) void {
         square.vely = -square.vely;
     }
 }
+
 fn draw(state: AppState) void {
     glfw.glfwGetWindowSize(state.win, &win_width, &win_height);
     drawutils.swap_to_pixel_coords(state.win);
