@@ -6,7 +6,7 @@ There are some notes that I made when learning Zig + OpenGL + GLFW
 
 - [bouncyrect.zig](./apps/bouncyrect.zig) - just bouncing rect using my [iapp system](#iapp-system)
 - [bouncyrect-no-iapp.zig](./apps/bouncyrect-no-iapp.zig) - just bouncing rect without [iapp system](#iapp-system)
-- [example.zig](./apps/bouncyrect-old.zig) - example app [iapp system](#iapp-system)
+- [example.zig](./apps/example.zig) - example app [iapp system](#iapp-system)
 
 ## iapp system
 some thing that allows easily init_app
